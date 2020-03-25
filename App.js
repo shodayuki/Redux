@@ -11,7 +11,7 @@ import {
   SHOW_ALL,
   SHOW_ACTIVE,
   SHOW_COMPLETED
-} from './actions/todoActionCreator';
+} from './actions/visibleFilterActionCreator';
 
 class App {
   static getTodosByVisibleFilter() {
