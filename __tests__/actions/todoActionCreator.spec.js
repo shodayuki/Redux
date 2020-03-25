@@ -1,21 +1,46 @@
-export const ADD_TODO = 'ADD_TODO';
-export const DELETE_TODO = 'DELETE_TODO';
-export const TOGGLE_TODO_COMPLETED = 'TOGGLE_TODO_COMPLETED';
+import {
+  ADD_TODO,
+  DELETE_TODO,
+  TOGGLE_TODO_COMPLETED,
+  addTodo,
+  deleteTodo,
+  toggleTodoCompleted
+} from '../../actions/todoActionCreator';
 
-export const addTodo = () => {
-  return {
-    type: ADD_TODO
-  };
-};
+describe('todoActionCreatorのテスト', () => {
+  it('addTodo関数', () => {
+    const dummyText = 'ダミーテキスト';
+    const action = addTodo(dummyText);
 
-export const deleteTodo = () => {
-  return {
-    type: DELETE_TODO
-  };
-};
+    expect( action ).toStrictEqual(
+      {
+        type: ADD_TODO,
+        text: dummyText
+      }
+    );
+  });
 
-export const toggleTodoCompleted = () => {
-  return {
-    type: TOGGLE_TODO_COMPLETED
-  };
-};
+  it('deleteTodo関数', () => {
+    const indexValue = 1;
+    const action = deleteTodo(indexValue);
+
+    expect( action ).toStrictEqual(
+      {
+        type: DELETE_TODO,
+        index: indexValue
+      }
+    );
+  });
+
+  it('toggleTodoComplete関数', () => {
+    const indexValue = 1;
+    const action = toggleTodoCompleted(indexValue);
+
+    expect( action ).toStrictEqual(
+      {
+        type: TOGGLE_TODO_COMPLETED,
+        index: indexValue
+      }
+    );
+  });
+});
