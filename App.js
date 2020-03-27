@@ -20,7 +20,7 @@ class App {
     if (visibleFilter === SHOW_ACTIVE) {
       return todos.filter(todo => !todo.hasCompleted());
     } else if (visibleFilter === SHOW_COMPLETED) {
-      return todos.filter(todo => todo.has.Completed());
+      return todos.filter(todo => todo.hasCompleted());
     }
 
     return todos;

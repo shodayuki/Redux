@@ -59,7 +59,7 @@
     }
 
     const todos = App.getTodosByVisibleFilter();
-    expect(todos.length),toStrictEqual(length);
+    expect(todos.length).toStrictEqual(length);
 
     // 最初の1件だけcompletedの状態にする
     App.toggleTodoCompleted(0);
