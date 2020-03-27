@@ -2,7 +2,7 @@ import {
   ADD_TODO,
   DELETE_TODO,
   TOGGLE_TODO_COMPLETED
-} from '../../models.Todo';
+} from '../actions/todoActionCreator';
 import Todo from '../models/Todo';
 
 /**
@@ -34,7 +34,7 @@ import Todo from '../models/Todo';
 
           const targetTodo = new Todo(todo.text);
           if ( !todo.hasCompleted() ) {
-            targetTodo.Todo.toggle();
+            targetTodo.toggle();
           }
 
           return targetTodo;
